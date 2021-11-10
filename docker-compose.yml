@@ -1,0 +1,16 @@
+# Use postgres/example user/password credentials
+version: '3.2'
+
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 3333:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:
+    driver: local
